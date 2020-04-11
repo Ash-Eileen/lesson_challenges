@@ -1,0 +1,47 @@
+Artist, Albums, Song, Billboards
+We've got a biiiiig challenge for the rest of today, so feel free to collaborate and bounce ideas of each other as to how you'd solve the problem. The tests have been written to cover all steps, but feel free to check your progress as you complete a section
+
+We will be creating 4 classes: Song, Album, Artist and BillboardTop10
+
+IMPORTANT: Please click the "Mark" button to run our tests periodically after finishing each of the different sections of this challenge to ensure your code is working as expected. 
+
+Song class
+1. The Song class will have title, duration and genre
+
+2. Create at least three instances of the Song class
+
+
+Album class
+3. Similarly, the Album class will have a title, release_date and songs, which will be an array, that will eventually hold an album's songs
+
+4. Create at least three instances of the Album class
+
+5. Create an instance method, called add_song, to add song objects to the songs attribute. Then add the songs that have been created to some or all the albums
+
+6. Create a method, called number_of_songs, that will count how many songs that album instance has
+
+
+Artist class
+7. Artist class will have two attributes: name and albums, the albums attribute will be an array of album objects
+
+8. The Artist class will also have an instance method, called add_album, that will allow it to add album objects to the albums attribute
+
+9. Create two instances of the Artist class
+
+10. Use the instance method to add some album objects to the album attribute
+
+11. Create a method, called number_of_albums, that will count how many albums an artist has
+
+
+BillboardTop10 Class
+12. Create a BillboardTop10 class that will have two attributes: year and artists
+
+13. Similarly, the BillboardTop10 class will have an instance method called, add_artist, that will add the artists that featured in the top ten that year
+
+14. If more than 10 artists are entered, the first one that was entered will be dropped, so the array will never be longer than 10
+
+15. Use this method to add some artists to a BillboardTop10 instance
+
+16. Create a method, called number_of_artists, that shows how many artists there are in a billboard year - remember this cannot exceed 10!
+
+Once all tests have been passed, feel free to go onwards and keep building this. Could turn it into a cool little app/website!
