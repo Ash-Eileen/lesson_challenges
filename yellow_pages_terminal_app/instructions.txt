@@ -1,0 +1,34 @@
+Yellow Pages - Terminal Edition
+Implement a standard phone book using hashes (or you can use both arrays & hashes!). Let users view, add, or remove entries in a phone book. You should be able to:
+
+view should just show all entries
+
+You should prompt the user for each property of the entry:
+
+What is the name? ___
+
+What is the number? ___
+
+Advanced Challenge:
+
+Add an option that prompts the user to remove a name, and if that name is in the phone book then ask the user to confirm the removal. Only remove the entry once the user confirms that they want to remove it!
+
+Modify your phone book to contain more information about a person (e.g. their workplace and address), like a really old-fashioned phone book!  
+
+You should also be able to view the phone book’s entire collection of entries in a nicely formatted message.
+
+E.g. 
+
+--------------------------------------- 
+Alex Holder +6100000000 
+Educator at Coder Academy 
+118 Walker St, North Sydney, NSW 2060 
+--------------------------------------- 
+Ubisoft Australia +6100000001 
+Videogame sales & support 14 
+Mountain St, Ultimo, NSW 2007 
+--------------------------------------- 
+Saad Saaed +6100000002 
+Academic & Partnerships Director at Coder Academy 
+118 Walker St, North Sydney, NSW 2060 
+--------------------------------------- 
