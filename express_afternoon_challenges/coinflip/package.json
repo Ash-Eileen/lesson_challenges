@@ -1,11 +1,11 @@
 {
-  "name": "greeter",
+  "name": "coinflip",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "greeter": "forever -c \"nodemon --exitcrash -L\" app.js"
+    "coinflip": "forever -c \"nodemon --exitcrash -L\" app.js"
   },
   "keywords": [],
   "author": "",
