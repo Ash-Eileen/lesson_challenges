@@ -103,6 +103,7 @@ h4 {
   font-size: 0.875rem;
 }
 p {
+  padding-top: 1rem;
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
