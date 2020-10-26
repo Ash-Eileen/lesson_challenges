@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message';
-import MessageUseEffect from './MessageUseEffect';
+import MessageUseEffect from './MessageUsingAPICall';
 
 const App = () => {
   return (

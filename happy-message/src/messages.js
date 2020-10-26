@@ -7,3 +7,9 @@ your way.' - Dr Seuss`,
   `'The way I see it, if you want the rainbow, you gotta put up with the rain.' - Dolly Parton`,
   `'When we are open to new possibilities, we find them. Be open and skeptical of everything.' - Todd Kashdan`,
 ];
+
+export const initialMessage = {
+  content:
+    'When we are open to new possibilities, we find them. Be open and skeptical of everything.',
+  author: 'Todd Kashdan',
+};
