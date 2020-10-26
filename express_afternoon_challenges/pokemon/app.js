@@ -1,48 +1,64 @@
+// As requested using node-fetch
+
 const express = require('express')
 const fetch = require('node-fetch');
 
 const app = express()
 const port = 3000
 
-function getRandomNumberForPokeAPI() {
-  let suitableNumber = Math.floor(Math.random() * 808);
-  return suitableNumber;
+function randomValidNumbers(num) {
+  let arr = []
+  for (let i = 0; i < num; i++) {
+    arr.push(Math.floor(Math.random() * 808) + 1)
+  }
+  return arr
 }
 
-app.get('/', (req, res) => {
-	res.send('Hello World!')
-})
-
-app.get('/teamBuilder', (req, res) => {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNumberForPokeAPI()}`)
+// Returns pokemon object using the pokemon numbers
+function pokemonGenerator(num) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
     .then(res => res.json())
-    .then(json => {
-      if (json.types[1]) {
-      res.send(`Name: ${json.name}, Type 1: ${json.types[0].type.name}, Type 2: ${json.types[1].type.name}, Pic: ${json.sprites.front_default}`)
-    } else {
-      res.send(`Name: ${json.name}, Type: ${json.types[0].type.name}, Pic: ${json.sprites.front_default}`)
-    }
-    }
-  )
+    .then(eachPokemon => {
+      let pokemon = {
+        "types": []
+      }
+      pokemon.name = eachPokemon["name"]
+      for (let i = 0; i < eachPokemon["types"].length; i++) {
+        pokemon["types"][i] = eachPokemon["types"][i]["name"]
+      }
+      pokemon.image = eachPokemon.sprites.front_default
+      return pokemon
+    })
+}
+
+function getPokemon(pokemon) {
+
+  obj = {
+    data: []
   }
-)
+  pokemon.map(pokemon => {
+    obj.data.push(pokemon)
+  })
+
+}
+
+function xyz(num) {
+  const idArr = randomValidNumbers(num)
+
+  let pokePromises = idArr.map(pokemonGenerator)
+  Promise.all(pokePromises).then(console.log)
+
+}
+
+// app.get('/', (req, res) => {
+// 	res.send('Hello World!')
+// })
+
 
 app.get('/teamBuilder/:numberOfTimes', (req, res) => {
-  let numberOfTimes = req.params.numberOfTimes
-  while(numberOfTimes > 0) { 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNumberForPokeAPI()}`)
-      .then(res => res.json())
-      .then(json => {
-        if (json.types[1]) {
-          res.write(`<p>Name: ${json.name}, Type 1: ${json.types[0].type.name}, Type 2: ${json.types[1].type.name}, Pic: ${json.sprites.front_default}<p>`)
-        } else {
-          res.write(`<p>Name: ${json.name}, Type: ${json.types[0].type.name}, Pic: ${json.sprites.front_default}</p>`)
-        }
-      })
-    numberOfTimes--
-  }
-  res.end
-  }
-)
+  pokemon = xyz(req.params.numberOfTimes)
+  res.send(pokemon);
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
