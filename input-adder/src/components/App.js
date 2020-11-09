@@ -1,7 +1,7 @@
 import React from 'react';
 // import Form from './Form';
 // import AddInput from './AddInput';
-import BCForm from './BCForm';
+import Form from './BCForm';
 // import Filter from './Filter';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <div className='container'>
       {/* <Form />
       <AddInput /> */}
-      <BCForm />
+      <Form />
       {/* <Filter /> */}
     </div>
   );
