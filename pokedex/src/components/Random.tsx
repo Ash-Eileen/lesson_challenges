@@ -25,7 +25,7 @@ const Random = () => {
           setSprite(res.sprites.front_default)
           setRandomPokemon(res)
         })    }
-  }, [randomPokemon])
+  })
 
   console.log(randomPokemon);
   

@@ -24,7 +24,8 @@ const SpecificPokemon = ({ match }: RouteComponentProps<TParams>) => {
           setPokemon(res)
         })
     }
-  }, [match.params, pokemon, sprite])  
+  })  
+  
   return (
     <>
       {pokemon && 
