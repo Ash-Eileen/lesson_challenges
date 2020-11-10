@@ -16,14 +16,10 @@ const SpecificPokemon = ({ match }: RouteComponentProps<TParams>) => {
 
   return (
     <>
-      {pokemon ? (
+      {pokemon && (
         <>
           <p style={{ textTransform: "capitalize" }}>{pokemon.name}</p>
           <img src={`${pokemon.sprites.front_default}`} alt="pokemon"></img>
-        </>
-      ) : (
-        <>
-          <h1>Meow</h1>
         </>
       )}
     </>

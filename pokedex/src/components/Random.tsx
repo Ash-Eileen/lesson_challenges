@@ -1,33 +1,38 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from "react";
 
 const getRandomNumberForPokeAPI = () => {
-    let suitableNumber = Math.floor(Math.random() * 808);
-    return suitableNumber;
-}
+  let suitableNumber = Math.floor(Math.random() * 808);
+  return suitableNumber;
+};
 
 const Random = () => {
-  const [pokemon, setPokemon] = useState<Pokemon | undefined>()
-  
+  const [pokemon, setPokemon] = useState<Pokemon | undefined>();
+
   useEffect(() => {
     if (!pokemon) {
       fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNumberForPokeAPI()}`)
-        .then(res => res.json())
-        .then(res => {
-          setPokemon(res)
-        })    
-      }
-  })
-  
+        .then((res) => res.json())
+        .then((res) => {
+          setPokemon(res);
+        });
+    }
+  });
+
   return (
     <div>
       <h1>Random</h1>
-      {pokemon && 
-      <>
-        <p style={{textTransform: 'capitalize'}}>{pokemon.name}</p>
-        <img src={`${pokemon.sprites.front_default}`} alt='pokemon'></img>
-      </>}
+      {pokemon ? (
+        <>
+          <p style={{ textTransform: "capitalize" }}>{pokemon.name}</p>
+          <img src={`${pokemon.sprites.front_default}`} alt="pokemon"></img>
+        </>
+      ) : (
+        <>
+          <h3>Loading...</h3>
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Random
+export default Random;
